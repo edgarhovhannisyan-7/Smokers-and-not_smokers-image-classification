@@ -30,17 +30,15 @@ while True:
     # Preprocess the frame
     processed_frame = preprocess_frame(frame)
 
+
     # Make a prediction
     prediction = model.predict(processed_frame)
-    class_idx = np.argmax(prediction)  # Get the class with the highest probability
-
-    # Display the prediction on the frame
-    if class_idx == 0:
-        label = "Not Smoking"
-        color = (0, 255, 0)  # Green for "Not Smoking"
-    else:
+    if prediction[0] > 0.5:
         label = "Smoking"
-        color = (0, 0, 255)  # Red for "Smoking"
+        color = (0, 0, 255)  # Red
+    else:
+        label = "Not Smoking"
+        color = (0, 255, 0)  # Green
 
     # Put the label and rectangle on the frame
     cv2.putText(frame, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
