@@ -6,7 +6,7 @@ The dataset contains 1120 images divided equally into two classes, where 560 ima
 [git clone our repo](https://github.com/edgarhovhannisyan-7/Smokers-and-not_smokers-image-classification.git)
 cd repo_name
 ```
-### Create virtual enviroment
+### Create virtual environment
  - For windows
 ```
 ./venv/Scripts/actiate
@@ -19,7 +19,7 @@ source venv/bin/activate
 ```
 py -m pip install --upgrade pip
 ```
-### Install required packeges
+### Install required packages
 ```
 
 pip install opencv-python numpy pandas keras tensorflow matplotlib 
